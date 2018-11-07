@@ -1,0 +1,6 @@
+com/paleservice/paleservice/config/Config.class
+com/paleservice/paleservice/Users/UserRepository.class
+com/paleservice/paleservice/PaleServiceApplication.class
+com/paleservice/paleservice/Users/UserController.class
+com/paleservice/paleservice/Users/UserService.class
+com/paleservice/paleservice/Users/User.class
