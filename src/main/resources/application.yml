@@ -1,10 +1,9 @@
 spring:
   datasource:
-
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://palservicedb.crjkd697whfb.us-west-2.rds.amazonaws.com/yousefDB
-    username: yousef
-    password: Yousef87
+    url: jdbc:mysql://mysql3000.mochahost.com:3306/yamireh_palservice?serverTimezone=UTC
+    username: yamireh
+    password: yousef87
   jpa:
     hibernate:
       ddl-auto: update

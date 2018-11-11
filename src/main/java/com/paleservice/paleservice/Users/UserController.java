@@ -1,9 +1,7 @@
 package com.paleservice.paleservice.Users;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -36,19 +34,19 @@ public class UserController {
     }
 
 
-    @GetMapping("/create")
-    public List<User> users() {
-        /*
-        Users users = new Users();
-        users.setId(1);
-        users.setName("Sam");
-        users.setSalary(3400);
-        users.setTeamName("Development");
+    @PostMapping("/user")
+    public User createUser(@RequestBody User user) {
 
-        usersRepository.save(users);
+        User createdUser = usersRepository.save(user);
 
-        return usersRepository.findAll();
-        */
-        return null;
+        return createdUser;
+    }
+
+    @DeleteMapping("/user/{id}")
+    public String deleteUser(@PathVariable Long id) {
+
+        usersRepository.deleteById(id);
+
+        return "Success";
     }
 }

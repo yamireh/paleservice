@@ -1,5 +1,7 @@
 package com.paleservice.paleservice.Users;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -9,7 +11,7 @@ public class User {
     @Id
     @GeneratedValue
     @Column(name = "ID")
-    private Integer id;
+    private Long id;
 
     @Column(name = "NAME")
     private String name;
@@ -20,20 +22,22 @@ public class User {
     @Column(name = "STATUS")
     private Integer status;
 
-    @Column(name = "CREATION_DATE")
+    @CreationTimestamp
+    @Column(name = "CREATION_DATE", insertable=false)
     private Date creationDate;
 
-    @Column(name = "UPDATE_DATE")
+    @CreationTimestamp
+    @Column(name = "UPDATE_DATE", insertable=false, columnDefinition = "Date default SYSDATE")
     private Date updateDate;
 
     public User() {
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
